@@ -20,16 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-e@*ejw2(q7e%!b^bcq-q&&18)pe!tcqzyhw0s=+4mr#ii7_zf'
+SECRET_KEY = 'l+2fr-rwd31cqz(vct^(!r(thlu#meb5_d0i8jslx8jpn5ltk-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-<<<<<<< HEAD
 DEBUG = bool(int(os.environ.get('DEBUG', 1)))
-=======
-DEBUG = False
->>>>>>> 0349cb08ada294de05310ac1ddb6d049bbaa34dc
 
-ALLOWED_HOSTS = ['localhost', 'Mwngaruiya.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    'ec2-18-212-138-237.compute-1.amazonaws.com',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -47,8 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,8 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 AUTH_USER_MODEL = 'profiles_api.UserProfile'
 
