@@ -1,3 +1,4 @@
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -11,7 +12,6 @@ from rest_framework.permissions import IsAuthenticated
 from profiles_api import serializers
 from profiles_api import permissions
 from profiles_api import models
-
 
 class HelloApiView(APIView):
     """Test API View"""
@@ -123,3 +123,4 @@ class UserProfileFeedViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         """sets the user profile to logged in user"""
         serializer.save(user_profile=self.request.user)
+
