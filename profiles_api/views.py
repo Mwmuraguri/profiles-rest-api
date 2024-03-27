@@ -11,7 +11,6 @@ from rest_framework.permissions import IsAuthenticated
 from profiles_api import serializers
 from profiles_api import permissions
 from profiles_api import models
-from django.http import HttpResponse
 
 
 class HelloApiView(APIView):
@@ -124,7 +123,3 @@ class UserProfileFeedViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         """sets the user profile to logged in user"""
         serializer.save(user_profile=self.request.user)
-
-
-def index(request):
-    return HttpResponse("Welcome to the Django REST API!")
